@@ -1,0 +1,25 @@
+# Fractol Program: Mandelbrot and Julia Sets
+
+
+## Description
+
+Fractol is a graphical program that generates and displays fractal images. This program allows users to explore two popular types of fractals: the Mandelbrot set and the Julia set. The Mandelbrot set is a well-known fractal that arises from iterating a simple mathematical formula, and the Julia set depends on a constant parameter 'c'.
+
+## Features
+
+- Display both Mandelbrot and Julia fractals.
+- Zoom in and out on different regions of the fractals.
+- Change the constant 'c' for Julia sets to explore different variations.
+- Adjust the number of iterations to control the level of detail in the fractals.
+- Smooth coloring for a visually pleasing representation.
+
+## Requirements
+
+- C, MacOs
+- MLX library for visualization.
+
+## Installation
+
+1. Clone this repository to your local machine.
+2. Ensure you have make the project.
+
