@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 04:34:36 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/25 21:36:28 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:08 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	button_cross(t_data *init)
 
 int	handle_key_press(int button, t_data *init)
 {
-	init->step_size = 0.025;
+	init->step_size = 0.25;
 	if (button == ARROW_LEFT)
 	{
 		init->max_x += init->step_size;
@@ -103,7 +103,7 @@ int	check_julia_args(t_data *init, char *av[], int ac)
 	}
 	else if ((ac != 4
 			&& !ft_strncmp(av[1], "julia", 6))
-			|| (!ft_strncmp(av[1], "mandeljul", 10)
+		|| (!ft_strncmp(av[1], "mandeljul", 10)
 			|| !ft_strncmp(av[1], "mandelbrot", 11)))
 	{
 		init->x_holder = -0.70176;

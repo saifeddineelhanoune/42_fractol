@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 03:40:58 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/24 23:26:18 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:04:42 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	fractals_rendring(t_data *init)
 				init->iterations = julia_calcul(init);
 			else if (!ft_strncmp(init->s, "mandeljul", 9))
 				init->iterations = my_fractal_calcul(init);
-			init->color = init->iterations * 8000;
+			init->color = init->iterations * 800;
 			ft_mlx_pixel_put(init, init->x, init->y, init->color);
 			init->x++;
 		}
