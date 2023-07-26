@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 03:40:58 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/26 21:02:15 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:22:35 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	my_fractal_calcul(t_data *init)
 	while (init->iterations < MAX_ITER && (complex_abs(z, 1) < ESCAPE_RADIUS))
 	{
 		temp = z;
-		z.real = fabs(pow(temp.real, 2) - pow(temp.imaginary, 2) + init->c.real);
+		z.real = fabs(pow(temp.real, 2) - \
+		pow(temp.imaginary, 2) + init->c.real);
 		z.imaginary = fabs(2 * temp.real * temp.imaginary + init->c.imaginary);
 		init->iterations++;
 	}
@@ -76,8 +77,6 @@ int	mandelbrot_calcul(t_data *init)
 
 void	fractals_rendring(t_data *init)
 {
-	// mlx_clear_window(init->mlx_ptr, init->win_ptr);
-	// init->img = mlx_new_image(init->mlx_ptr, WIDTH, HEIGHT);
 	init->y = 0;
 	while (init->y < HEIGHT)
 	{
@@ -88,11 +87,11 @@ void	fractals_rendring(t_data *init)
 				* (init->max_x - init->min_x) / WIDTH;
 			init->c.imaginary = init->min_y + init->y
 				* (init->max_y - init->min_y) / HEIGHT;
-			if (!ft_strncmp(init->s, "mandelbrot", 10))
+			if (!ft_strcmp(init->s, "mandelbrot"))
 				init->iterations = mandelbrot_calcul(init);
-			else if (!ft_strncmp(init->s, "julia", 5))
+			else if (!ft_strcmp(init->s, "julia"))
 				init->iterations = julia_calcul(init);
-			else if (!ft_strncmp(init->s, "mandeljul", 9))
+			else if (!ft_strcmp(init->s, "burningship"))
 				init->iterations = my_fractal_calcul(init);
 			init->color = init->iterations * 800;
 			ft_mlx_pixel_put(init, init->x, init->y, init->color);

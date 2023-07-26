@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 03:26:17 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/26 20:49:59 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:19:49 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_ITER 100
+# define MAX_ITER 200
 # define ESCAPE_RADIUS 2.0
 # define ESC_KEY 53
 # define MOUSE_LEFT 1
@@ -75,7 +75,7 @@ typedef enum s_fractals
 }t_fractals;
 
 void		ft_mlx_pixel_put(t_data *data, int x, int y, int color);
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strcmp(const char *s1, const char *s2);
 void		fractals_rendring(t_data *init);
 int			handle_mouse_wheel(int button, int x, int y, t_data *init);
 int			handle_keys_press(int button, t_data *init);

@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 04:34:36 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/26 21:26:54 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:21:30 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,26 +92,24 @@ double	ft_strtod(const char *str, t_data *init)
 
 int	check_julia_args(t_data *init, char *av[], int ac)
 {
-	if ((ac != 2 && ac != 4)  && !ft_strncmp(av[1], "julia", 6))
+	if ((ac != 2 && ac != 4) && !ft_strcmp(av[1], "julia"))
 	{
 		write(1, "BAD ARGUMENTS PLEASE WRITE REAL IMAG\n", 38);
 		exit(EXIT_FAILURE);
 	}
-	else if (ac == 4 && !ft_strncmp(av[1], "julia", 6))
+	else if (ac == 4 && !ft_strcmp(av[1], "julia"))
 	{
 		init->x_holder = ft_strtod(av[2], init);
 		init->y_holder = ft_strtod(av[3], init);
 		if ((init->x_holder < -2.0 || init->x_holder > 2.0)
 			&& (init->y_holder < -2.0 || init->y_holder > 2.0))
 		{
-			write(1, "THE INTERVAL SET IS [-2,2]", 26);
+			write(1, "THE INTERVAL SET IS [-2.0, 2.0]", 31);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if ((ac != 4
-			&& !ft_strncmp(av[1], "julia", 6))
-		|| (!ft_strncmp(av[1], "mandeljul", 10)
-			|| !ft_strncmp(av[1], "mandelbrot", 11)))
+			&& !ft_strcmp(av[1], "julia")))
 	{
 		init->x_holder = -0.70176;
 		init->y_holder = 0.3842;

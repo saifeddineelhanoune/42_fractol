@@ -2,7 +2,7 @@ NAME = fractol
 SRCS = 	$(shell ls *.c)
 OBJS = $(SRCS:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ofast -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -Ofast
 MLX = -lmlx -framework OpenGL -framework AppKit
 all: $(NAME)
 %.o: %.c

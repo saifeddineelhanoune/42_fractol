@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:07:57 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/26 21:26:26 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/27 00:20:42 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ void	ft_error(int ac, char *av[])
 		write(1, "ERROR USAGE: ./fractol <name_of_fractal>", 40);
 		exit(EXIT_FAILURE);
 	}
-	else if (ac != 2 && !ft_strncmp("mandelbrot", av[1], 10))
+	else if (ac != 2 && !ft_strcmp("mandelbrot", av[1]))
 	{
 		write(1, "ERROR: mandelbrot have no params", 32);
 		exit(EXIT_FAILURE);
 	}
-	else if (ac != 2 && !ft_strncmp("mandeljul", av[1], 5))
+	else if (ac != 2 && !ft_strcmp(av[1], "burningship"))
 	{
-		write(1, "ERROR USAGE: mandeljul have no params", 37);
+		write(1, "ERROR USAGE: burningship have no params", 40);
 		exit(EXIT_FAILURE);
 	}
-	else if (ft_strncmp("mandelbrot", av[1], 10)
-		&& ft_strncmp("julia", av[1], 5)
-		&& ft_strncmp("mandeljul", av[1], 10))
+	else if (ft_strcmp("mandelbrot", av[1])
+		&& ft_strcmp("julia", av[1])
+		&& ft_strcmp("burningship", av[1]))
 	{
 		write(1, "ERROR USAGE: ./fractol <name_of_fractal>", 40);
 		exit(EXIT_FAILURE);
