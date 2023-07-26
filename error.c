@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:07:57 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/25 21:23:47 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/26 21:26:26 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,11 @@ char	*mini_atod(t_data *init, const char *str)
 	{
 		init->result = init->result * 10.0 + (*str - '0');
 		str++;
+	}
+	if (*str != '.')
+	{
+		write(1, "BAD ARGUMENTS PLEASE WRITE NUMBERS OF TYPE DOUBLE\n", 50);
+		exit(EXIT_FAILURE);
 	}
 	return ((char *)str);
 }

@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 03:40:58 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/25 23:04:42 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/26 21:02:15 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	my_fractal_calcul(t_data *init)
 	t_complex	z;
 	t_complex	temp;
 
-	z.real = init->c.real;
-	z.imaginary = init->c.imaginary;
+	z.real = 0;
+	z.imaginary = 0;
 	init->iterations = 0;
-	while (init->iterations < MAX_ITER && complex_abs(z, 0) < ESCAPE_RADIUS)
+	while (init->iterations < MAX_ITER && (complex_abs(z, 1) < ESCAPE_RADIUS))
 	{
 		temp = z;
-		z.real = z.real * z.real - z.imaginary * z.imaginary + init->x_holder;
-		z.imaginary = 2 * temp.real * temp.imaginary + init->y_holder;
+		z.real = fabs(pow(temp.real, 2) - pow(temp.imaginary, 2) + init->c.real);
+		z.imaginary = fabs(2 * temp.real * temp.imaginary + init->c.imaginary);
 		init->iterations++;
 	}
 	return (init->iterations);
@@ -76,6 +76,8 @@ int	mandelbrot_calcul(t_data *init)
 
 void	fractals_rendring(t_data *init)
 {
+	// mlx_clear_window(init->mlx_ptr, init->win_ptr);
+	// init->img = mlx_new_image(init->mlx_ptr, WIDTH, HEIGHT);
 	init->y = 0;
 	while (init->y < HEIGHT)
 	{

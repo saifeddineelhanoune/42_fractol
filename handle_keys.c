@@ -6,7 +6,7 @@
 /*   By: sel-hano <sel-hano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 04:34:36 by sel-hano          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:08 by sel-hano         ###   ########.fr       */
+/*   Updated: 2023/07/26 21:26:54 by sel-hano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	button_cross(t_data *init)
 
 int	handle_key_press(int button, t_data *init)
 {
-	init->step_size = 0.25;
+	init->step_size = 0.025;
 	if (button == ARROW_LEFT)
 	{
 		init->max_x += init->step_size;
@@ -73,10 +73,17 @@ double	ft_strtod(const char *str, t_data *init)
 	str = (const char *)mini_atod(init, str);
 	if (*str == '.')
 	{
-		while (*(++str) >= '0' && *str <= '9')
+		str++;
+		while (*str && *str != '.' && *(str) >= '0' && *str <= '9')
 		{
 			init->fraction = init->fraction * 10.0 + (*str - '0');
 			init->fraction_length++;
+			str++;
+		}
+		if (*str)
+		{
+			write(1, "BAD ARGUMENTS PLEASE WRITE NUMBERS OF TYPE DOUBLE\n", 50);
+			exit(EXIT_FAILURE);
 		}
 	}
 	init->result += init->fraction / pow(10.0, init->fraction_length);
@@ -85,7 +92,7 @@ double	ft_strtod(const char *str, t_data *init)
 
 int	check_julia_args(t_data *init, char *av[], int ac)
 {
-	if (ac > 4 && !ft_strncmp(av[1], "julia", 6))
+	if ((ac != 2 && ac != 4)  && !ft_strncmp(av[1], "julia", 6))
 	{
 		write(1, "BAD ARGUMENTS PLEASE WRITE REAL IMAG\n", 38);
 		exit(EXIT_FAILURE);
