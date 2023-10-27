@@ -1,4 +1,4 @@
-# Fractol
+### Fractol
 
 Fractol is a project that explores the fascinating world of fractals and complex numbers. It allows you to generate and explore various types of fractals in real-time, providing an interactive and visually stunning experience.
 
@@ -71,9 +71,6 @@ Experiment with different fractal types, explore different regions of the fracta
 
 Contributions to the Fractol project are welcome! If you have any improvements, bug fixes, or additional features to add, feel free to submit a pull request. Please follow the existing code style and provide clear documentation for your contributions.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
