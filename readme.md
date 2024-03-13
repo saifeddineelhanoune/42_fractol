@@ -9,10 +9,6 @@ Fractol is a project that explores the fascinating world of fractals and complex
 - [Complex Numbers](#complex-numbers)
 - [Problem and Introduction of MLX](#problem-and-introduction-of-mlx)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction
 
 Fractol is a project developed as part of the 42 curriculum to deepen your understanding of fractals and complex numbers. It provides a graphical interface where you can interactively explore and generate different types of fractals.
@@ -66,12 +62,5 @@ Make sure you have the necessary dependencies installed, such as the graphics li
 Once you have the Fractol project running, you can use the graphical interface to explore and generate fractals. The interface allows you to navigate through the fractal space, zoom in and out, and adjust parameters to modify the appearance of the fractals.
 
 Experiment with different fractal types, explore different regions of the fractal space, and observe the intricate patterns that emerge. Use the keyboard and mouse controls provided by the interface to interact with the fractals and navigate through the visualizations.
-
-## Contributing
-
-Contributions to the Fractol project are welcome! If you have any improvements, bug fixes, or additional features to add, feel free to submit a pull request. Please follow the existing code style and provide clear documentation for your contributions.
-
-
-## Contact
 
 
